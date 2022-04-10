@@ -1,24 +1,25 @@
 
 
 <div class="container" >
-    <p>Lista de usuários!</p>
+    <p class="listadeusuarios">Lista de usuários!</p>
 
-    <button routerLink="/add" type="button" class="btn btn-dark">Cadastrar</button>
+    <button routerLink="/add" type="button" class="btn btn-success">Cadastrar</button>
 
+    <div class="table-responsive">
     <table class="table">
         <thead>
-          <tr>
+          <tr class="table-list">
             <th scope="col">Nome</th>
-            <th scope="col">Data de Nacimento</th>
+            <th scope="col">Data de nascimento</th>
             <th scope="col">CPF</th>
-            <th scope="col">email</th>
-            <th scope="col">senha</th>
+            <th scope="col">Email</th>
+            <th scope="col">Senha</th>
             <th scope="col">Editar</th>
             <th scope="col">Eliminar</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of usersList">
+          <tr *ngFor="let user of usersList" class="table-itens">
             <th>{{user.username}}</th>
             <td>{{user.userborndate}}</td>
             <th>{{user.usercpf}}</th>
@@ -33,6 +34,7 @@
           </tr>
         </tbody>
       </table>
+    </div>
 
 </div>
 
