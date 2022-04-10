@@ -29,7 +29,7 @@ export class UsersService {
 
 
 export interface User{
-  id?: number,
+  id?: any,
   username: string,
   userborndate: string,
   usercpf: string,
@@ -38,3 +38,11 @@ export interface User{
 }
 
 
+
+export interface editUser{
+  username: string,
+  userborndate: string,
+  usercpf: string,
+  useremail: string,
+  userpassword:string,
+}

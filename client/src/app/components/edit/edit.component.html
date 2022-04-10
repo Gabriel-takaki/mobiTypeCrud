@@ -1,1 +1,41 @@
-<p>edit works!</p>
+
+<div class="container">
+    <p>EDITAR USUÁRIO</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nome do usuário</label>
+                    <input [(ngModel)]="user.username" type="text" class="form-control" name="nombre"> 
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Data de nascimento</label>
+                    <input [(ngModel)]="user.userborndate" type="text" class="form-control" name="nombre">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">CPF</label>
+                    <input [(ngModel)]="user.usercpf" type="text" class="form-control" name="nombre">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input [(ngModel)]="user.useremail" type="text" class="form-control" name="nombre">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Senha</label>
+                    <input [(ngModel)]="user.userpassword" type="text" class="form-control" name="nombre">
+                </div>
+
+
+                <button (click)="edit()" class="btn btn-primary">Editar</button>
+            </form>
+        </div>
+
+
+
+    </div>
+    
+</div>

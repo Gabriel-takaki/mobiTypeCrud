@@ -41,7 +41,7 @@ export default class UserController {
     const  notId  = req.params.id;
     const id = parseInt(notId)
     
-    const newUser: InputUser = await this.userModel.update({ username, userborndate, usercpf, useremail, userpassword, id });
+    const newUser: InputUser = await this.userModel.update({ id, username, userborndate, usercpf, useremail, userpassword });
     console.log(newUser);
     
     // const generateToken: InputUser = { id: username.id, username };

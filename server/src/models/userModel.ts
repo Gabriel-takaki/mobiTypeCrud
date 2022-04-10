@@ -31,7 +31,7 @@ export default class UserModel {
   }
 
   public async update({ username, userborndate, usercpf, useremail, userpassword, id }: InputUser): Promise <InputUser> {
-    console.log(id);
+    console.log('aaaa',id);
     
     const [ insertId ] = await this.connection.execute(
       'UPDATE crud_user.user SET username= ?, userborndate= ?, usercpf= ?, useremail= ?, userpassword= ? WHERE id= ?',

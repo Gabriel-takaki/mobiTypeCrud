@@ -1,16 +1,18 @@
 
 
 <div class="container" >
-    <p>lISTA DE EQUIPOS!</p>
+    <p>Lista de usuários!</p>
 
-    <button routerLink="/add" type="button" class="btn btn-dark">Agregar </button>
+    <button routerLink="/add" type="button" class="btn btn-dark">Cadastrar</button>
 
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Logo</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Data de Nacimento</th>
+            <th scope="col">CPF</th>
+            <th scope="col">email</th>
+            <th scope="col">senha</th>
             <th scope="col">Editar</th>
             <th scope="col">Eliminar</th>
           </tr>
@@ -19,15 +21,19 @@
           <tr *ngFor="let user of usersList">
             <th>{{user.username}}</th>
             <td>{{user.userborndate}}</td>
-            <td>"{{user.useremail}} </td>
+            <th>{{user.usercpf}}</th>
+            <td>{{user.useremail}}</td>
+            <td>"{{user.userpassword}} </td>
             <td>
-                <button type="button" class="btn btn-primary">Editar</button>
+                <button (click)="editUser(user.id)" type="button" class="btn btn-primary">Editar</button>
             </td>
             <td>
-                <button  type="button" class="btn btn-danger">Eliminar</button>
+                <button (click)="deleteUser(user.id)" type="button" class="btn btn-danger">Eliminar</button>
             </td>
           </tr>
         </tbody>
       </table>
 
 </div>
+
+

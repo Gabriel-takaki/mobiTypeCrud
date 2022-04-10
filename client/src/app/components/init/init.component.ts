@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User, UsersService } from 'src/app/services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-init',
@@ -10,7 +11,7 @@ export class InitComponent implements OnInit {
 
   usersList: User[] = [];
 
-  constructor(private UserService: UsersService) { }
+  constructor(private UserService: UsersService, private router: Router,) { }
 
   ngOnInit(): void {
     this.listAllUsers();
@@ -24,5 +25,19 @@ export class InitComponent implements OnInit {
       }
     )
   }
+
+  deleteUser(id:string){
+    this.UserService.deleteuser(id).subscribe(
+      res =>{
+        console.log('user deleted');
+        this.listAllUsers();
+      }      
+    )
+  }
+
+  editUser(id:string){
+    this.router.navigate(['/edit/'+id])
+  }
+
 
 }
