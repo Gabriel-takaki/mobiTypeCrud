@@ -16,11 +16,19 @@ export default class UserModel {
   }
 
   public async getAll(): Promise<InputUser[]> {
-    const [allProducts] = await this.connection.execute<RowDataPacket[]>(
+    const [allUsers] = await this.connection.execute<RowDataPacket[]>(
       'SELECT * FROM crud_user.user;',
     );
 
-    return allProducts as InputUser[];
+    return allUsers as InputUser[];
+  }
+
+  public async getByName(username:string): Promise<InputUser[]> {
+    const [allUsers] = await this.connection.execute<RowDataPacket[]>(
+      'SELECT * FROM crud_user.user WHERE username = ?;', [username]
+    );
+
+    return allUsers as InputUser[];
   }
 
   public async delete(id:number): Promise<void>{

@@ -18,8 +18,6 @@ export default class UserController {
     const newUser: InputUser = await this.userModel.create({ username, userborndate, usercpf, useremail, userpassword });
     const newToken = jwtTokenGenerator(newUser);
     console.log(newToken);
-    
-    // const generateToken: InputUser = { id: username.id, username };
 
     return res.status(201).json({ token: newToken });
   }
@@ -28,6 +26,15 @@ export default class UserController {
     const allProducts: InputUser[] = await this.userModel.getAll();
     console.log(allProducts);
     return res.status(200).json(allProducts);
+  }
+
+
+
+  public async getUserByName(req: Request, res: Response): Promise<Response> {
+    const {username} = req.params;
+    const userByName: InputUser[] = await this.userModel.getByName(username);
+    console.log(userByName);
+    return res.status(200).json(userByName);
   }
 
   public async deleteUser(req: Request, res: Response): Promise<Response> {
@@ -40,12 +47,12 @@ export default class UserController {
     const { username, userborndate, usercpf, useremail, userpassword } = req.body; 
     const  notId  = req.params.id;
     const id = parseInt(notId)
-    
+
     const newUser: InputUser = await this.userModel.update({ id, username, userborndate, usercpf, useremail, userpassword });
     console.log(newUser);
     
-    // const generateToken: InputUser = { id: username.id, username };
-
     return res.status(201).json({ token: newUser });
   }
+
+
 }
