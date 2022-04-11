@@ -9,13 +9,15 @@ import { InitComponent } from './components/init/init.component';
 
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { ListbynameComponent } from './components/listbyname/listbyname.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateComponent,
     EditComponent,
-    InitComponent
+    InitComponent,
+    ListbynameComponent
   ],
   imports: [
     BrowserModule,

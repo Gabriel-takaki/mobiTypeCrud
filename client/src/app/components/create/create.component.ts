@@ -24,6 +24,7 @@ export class CreateComponent implements OnInit {
 
   create(){
     delete this.user.id;
+    
 
     this.UserService.createUser(this.user).subscribe();
     this.router.navigate(['/inicio']);

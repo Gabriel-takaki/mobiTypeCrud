@@ -13,6 +13,10 @@ export class UsersService {
     return this.http.get(this.url);
   }
 
+  getUserByName(username: string){
+    return this.http.get(this.url+'/'+username);
+  }
+
   createUser(user: User){
     return this.http.post(this.url, user)
   }

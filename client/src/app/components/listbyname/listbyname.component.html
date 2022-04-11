@@ -1,0 +1,40 @@
+
+<div class="container" >
+    <p class="listadeusuarios">Lista de usuários!</p>
+
+    <button routerLink="/add" type="button" class="btn btn-success">Cadastrar</button>
+
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+          <tr class="table-list">
+            <th scope="col">Nome</th>
+            <th scope="col">Data de nascimento</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Email</th>
+            <th scope="col">Senha</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userByName" class="table-itens">
+            <th>{{user.username}}</th>
+            <td>{{user.userborndate}}</td>
+            <th>{{user.usercpf}}</th>
+            <td>{{user.useremail}}</td>
+            <td>"{{user.userpassword}} </td>
+            <td>
+                <button (click)="editUser(user.id)" type="button" class="btn btn-primary">Editar</button>
+            </td>
+            <td>
+                <button (click)="deleteUser(user.id)" type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>
+
+
